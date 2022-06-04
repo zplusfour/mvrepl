@@ -1,0 +1,26 @@
+{
+	"name": "mvrepl",
+	"version": "1.0.3",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"bin": {
+		"mvrepl": "./index.js"
+	},
+	"preferGlobal": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"conf": "^10.1.2",
+		"crosis4furrets": "^0.0.1-beta.7",
+		"inquirer": "^8.2.4",
+		"node-fetch": "^3.2.5",
+		"ora": "^6.1.0",
+		"readline-sync": "^1.4.10",
+		"replit-login": "^1.0.4"
+	}
+}
