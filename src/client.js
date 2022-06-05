@@ -23,7 +23,7 @@ const replQuestions = [
 
 var gql = new Gql(l);
 
-const createRepl = async (sid, title, language) => {
+const createRepl = async (title, language) => {
 	const query = await gql.raw({
 		variables: { input: { title, language } },
 		query: `mutation CreateRepl($input: CreateReplInput!) {
@@ -56,7 +56,7 @@ const statItem = (i) => {
 	return toret;
 };
 
-export const host = async () => {
+export const deploy = async () => {
 	if (!isLoggedIn) {
 		console.log('you are not logged in!');
 		return;

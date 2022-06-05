@@ -2,7 +2,7 @@
 import inq from 'inquirer';
 import * as rl from 'replit-login';
 import conf from 'conf';
-import { host } from './src/client.js';
+import { deploy } from './src/client.js';
 const argv = process.argv.slice(2);
 
 const loginQuestions = [
@@ -48,9 +48,9 @@ if (argv[0]) {
 		} else {
 			console.log('you are already logged in!');
 		}
-	} else if (argv[0] === 'host') {
+	} else if (argv[0] === 'deploy') {
 		if (config.get('login')) {
-			host();
+			deploy();
 		} else {
 			console.log('you are not logged in!');
 		}
@@ -58,7 +58,7 @@ if (argv[0]) {
 		if (!config.get('login')) {
 			console.log('you are not logged in!');
 		} else {
-			host();
+			deploy();
 		}
 	}
 }

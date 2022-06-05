@@ -1,13 +1,12 @@
 # mvrepl
 
 A tool to deploy a local project to replit, in seconds!
-npm package: https://npmjs.com/package/mvrepl
 
 Requirements:
 1. **latest** version of Node.js (https://nodejs.org/)
 2. **latest** version of npm (https://npmjs.com/) (or yarn)
 
-1. Installing
+3. Installing
 ```
 $ npm install -g mvrepl
 ```
