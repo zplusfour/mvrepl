@@ -23,21 +23,6 @@ const replQuestions = [
 
 var gql = new Gql(l);
 
-const getReplId = async (sid, u, r) => {
-	const url = `/@${u}/${r}`;
-	const query = await gql.raw({
-		variables: { url },
-		query: `query repl($url: String!) {
-					repl(url: $url) {
-						...on Repl {
-							id
-						}
-					}
-		}`
-	});
-	return query;
-};
-
 const createRepl = async (sid, title, language) => {
 	const query = await gql.raw({
 		variables: { input: { title, language } },
