@@ -18,11 +18,10 @@ Enter your username and password, and a Captcha token (get the captcha token fro
 $ mvrepl login
 ```
 
-3. Deploying
-~~not sure why its named host here its basically becuase i was busy with other things lol
-You have to enter the replname and the language.~~
+1. Deploying
+You have to enter the repl name and the repl language.
 ```
-$ mvrepl host
+$ mvrepl deploy
 ```
 
 And that's it! Have fun repling!
