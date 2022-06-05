@@ -37,7 +37,7 @@ const login = async (usr, pwd, t) => {
 
 const help = () => {
 	console.log(`
-		Usage: replit-deploy [x]
+		Usage: mvrepl [x]
 		------------------------
 		Avaliable commands:
 		- login: login with replit (asks for username and password and a captcha token from crkl.ml/captcha)
