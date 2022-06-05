@@ -1,6 +1,7 @@
 import { Crosis } from 'crosis4furrets';
 import conf from 'conf';
 import inquirer from 'inquirer';
+import open from 'open';
 import ora from 'ora';
 import * as fs from 'fs';
 import Gql from './gql.js';
@@ -93,6 +94,22 @@ export const deploy = async () => {
 			}
 
 			await client.close();
+
+			inquirer
+				.prompt([
+					{
+						name: 'openUrl',
+						type: 'confirm',
+						message: 'Open repl?'
+					}
+				])
+				.then(async ({ openUrl }) => {
+					if (openUrl) {
+						await open(url);
+					} else {
+						console.log('you chose to not open the repl.');
+					}
+				});
 			spinner.succeed('Done! You can access your repl at ' + url);
 		});
 	}

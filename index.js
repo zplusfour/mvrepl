@@ -35,9 +35,15 @@ const login = async (usr, pwd, t) => {
 	}
 };
 
-// var r_username = process.env['REPL_OWNER'];
-// var r_replname = process.env['REPL_SLUG'];
-// var r_id = process.env['REPL_ID'];
+const help = () => {
+	console.log(`
+		Usage: replit-deploy [x]
+		------------------------
+		Avaliable commands:
+		- login: login with replit (asks for username and password and a captcha token from crkl.ml/captcha)
+		- deploy: deploys the current directory to replit (asks for a repl name and language)
+	`);
+};
 
 if (argv[0]) {
 	if (argv[0] === 'login') {
@@ -55,10 +61,13 @@ if (argv[0]) {
 			console.log('you are not logged in!');
 		}
 	} else {
-		if (!config.get('login')) {
-			console.log('you are not logged in!');
-		} else {
-			deploy();
-		}
+		console.log('this is not a valid command.');
+	}
+} else {
+	if (!config.get('login')) {
+		console.log('you are not logged in by the way!');
+		help();
+	} else {
+		help();
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"name": "mvrepl",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "",
 	"main": "index.js",
 	"repository": {
@@ -23,6 +23,7 @@
 		"crosis4furrets": "^0.0.1-beta.7",
 		"inquirer": "^8.2.4",
 		"node-fetch": "^3.2.5",
+		"open": "^8.4.0",
 		"ora": "^6.1.0",
 		"readline-sync": "^1.4.10",
 		"replit-login": "^1.0.4"
