@@ -63,14 +63,21 @@ export const deploy = async () => {
 		return;
 	} else {
 		inquirer.prompt(replQuestions).then(async ({ replname, language }) => {
-			const test = await createRepl(l, replname, language);
-			const id = test.data.createRepl.id;
-			const url = 'https://replit.com' + test.data.createRepl.url;
+			const newRepl = await createRepl(l, replname, language);
+			if (newRepl.data.createRepl.message) {
+				console.log('message:', newRepl.data.createRepl.message);
+				process.exit(0);
+			}
 
+			const id = newRepl.data.createRepl.id;
+			const url = 'https://replit.com' + newRepl.data.createRepl.url;
+			console.log(id);
 			const client = new Crosis(l, id);
 			var filesToPush = [];
 			var thisDirFiles = [];
+
 			await client.connect();
+			await client.persist();
 
 			const spinner = ora({
 				text: 'Creating repl...',
@@ -93,7 +100,7 @@ export const deploy = async () => {
 				await client.write(i.name, i.content);
 			}
 
-			await client.close();
+			client.close();
 
 			inquirer
 				.prompt([
