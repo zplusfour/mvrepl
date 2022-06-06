@@ -101,21 +101,6 @@ export const deploy = async () => {
 
 			client.close();
 
-			inquirer
-				.prompt([
-					{
-						name: 'openUrl',
-						type: 'confirm',
-						message: 'Open repl?'
-					}
-				])
-				.then(async ({ openUrl }) => {
-					if (openUrl) {
-						await open(url);
-					} else {
-						console.log('you chose to not open the repl.');
-					}
-				});
 			spinner.succeed('Done! You can access your repl at ' + url);
 		});
 	}
