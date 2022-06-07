@@ -1,7 +1,6 @@
 import { Crosis } from 'crosis4furrets';
 import conf from 'conf';
 import inquirer from 'inquirer';
-import open from 'open';
 import ora from 'ora';
 import * as fs from 'fs';
 import Gql from './gql.js';
