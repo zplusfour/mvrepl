@@ -22,6 +22,6 @@ not sure why its named host here its basically becuase i was busy with other thi
 You have to enter the replname and the language.
 `$ mvrepl host`
 
-(tested by trusted replers like [CosmicBear](https://github.com/Cosmic6811) )
+(tested by trusted replers like [CosmicBear](https://github.com/Cosmic6811) and [DaInfLoop](https://github.com/DaInfLoop))
 
 And that's it! Have fun repling!
